@@ -5,13 +5,17 @@ terraform {
       version = "=3.0.0"
     }
   }
+
+   backend "azurerm" {
+    resource_group_name  = "tfstatefiles"
+    storage_account_name = "sactfstatefiles"
+    container_name       = "tfstatecontainer"
+    key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
     features {}
-
-    subscription_id = "6e3b70f0-3f80-4040-b014-efbab26b38a8"
-    tenant_id = "3e443672-d53c-4e92-9a3f-057e4644ca9e"
 }
 
 resource "azurerm_resource_group" "IACAPP" {
