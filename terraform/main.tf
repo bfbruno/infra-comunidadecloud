@@ -43,7 +43,7 @@ resource "azurerm_linux_web_app" "iaccomunidadecloudweb" {
     container_registry_use_managed_identity = false
     application_stack {
       docker_image = "comunidadecloudiacacr.azurecr.io/myiacacr"
-      docker_image_tag = "latest"
+      docker_image_tag = "5"
     }
   }
 }
